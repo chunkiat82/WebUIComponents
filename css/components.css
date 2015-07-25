@@ -1,0 +1,272 @@
+.clearfix:after {
+  clear: both;
+  content: '.';
+  display: block;
+  visibility: hidden;
+  height: 0;
+}
+.clearfix {
+  display: inline-block;
+}
+* html .clearfix {
+  height: 1%;
+}
+.clearfix {
+  display: block;
+}
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Open Sans', sans-serif;
+  color: #34495e;
+  font-size: 14px;
+}
+#demo {
+  width:300px;
+	padding:20px;	
+}
+
+input.pp{
+  border: 1px solid #34495e;
+  font-size: 14px;
+  padding: 10px;
+  width: 200px;
+  outline: 0;
+  color: #22313d;
+  border-radius: 5px;
+}
+
+label.label-floatlabel {
+  font-weight: bold;
+  padding-left: 5px;
+  color: #22313d;
+  font-size:9px !important;
+}
+
+/* special fix */
+select{
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    padding: 5px;
+}
+
+select.form-control{    
+    color: #BBB;
+    background: url(images/downarrow.png) no-repeat right white;
+    background-position: 95%;
+}
+
+option:first-child{
+  display:none;
+}
+
+.form-control::-moz-placeholder {
+  color: #BBB;
+}
+.form-control:-ms-input-placeholder {
+  color: #BBB;
+}
+.form-control::-webkit-input-placeholder {
+  color: #BBB;
+}
+
+.dz-message {
+  color: #BBB;
+}
+
+.dropzone {
+    height: 200px;
+    width: 400px;
+    border: 2px dotted #BBB !important;
+    background: white;   
+    border-radius: 5px;
+    padding: 0px !important;
+}
+
+.dropzone .dz-message {
+    text-align: center;
+    margin: 5.5em 0 !important;
+}
+
+.dropzone .dz-preview .dz-image {
+  width: 160px;
+  height: 160px;
+}
+
+.dropzone:after {
+  content: " ";
+  position: absolute;
+  z-index: -1;
+  top: 10px;
+  left: 10px;
+  right: 5px;
+  bottom: 5px;
+  border: 1px solid #BBB;
+  height: 220px;
+  width: 420px;
+  border-radius: 5px;
+}
+
+/* just for checkbox*/
+
+.checkbox label .icon {
+    background-image: url(https://www.paypalobjects.com/webstatic/i/consumer/onboarding/onboarding_form_2x.png);
+    background-size: 24px;
+}
+.checkbox label .icon {
+    position: absolute;
+    margin-left: -40px;
+    display: inline-block;
+    vertical-align: middle;
+    background-image: url(https://www.paypalobjects.com/webstatic/i/consumer/onboarding/onboarding_form.png);
+    background-repeat: no-repeat;
+    width: 24px;
+    height: 24px;
+
+}
+.fields{
+  margin: 0 0 10px 0;
+}
+
+.checkbox input[type=checkbox] {
+    border: 0;
+    clip: rect(0 0 0 0);
+    height: 24px;
+    margin: 0 -24px -24px -40px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 24px;
+    opacity: .001;
+}
+
+.fields input, .fields textarea {
+    height: 44px;
+    width: 100%;
+    padding: 0 24px 0 12px;
+    border: 1px solid #aaa;
+    outline: 0;
+    background: #fff;
+    text-overflow: ellipsis;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -khtml-border-radius: 5px;
+    border-radius: 5px;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+    color: #000;
+    font-size: 16px;
+    font-family: Helvetica,Arial,sans-serif;
+    font-weight: 400;
+    -webkit-background-clip: padding-box;
+    -moz-background-clip: padding-box;
+    background-clip: padding-box;
+}
+
+.checkbox input[type=checkbox]:checked+.icon, .checkbox ._checked input[type=checkbox]+.icon {
+    background-position: 0 15.3%;
+}
+
+.checkbox label {
+    margin-left: 40px;
+    display: inline-block;
+    line-height: 16px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    vertical-align: sub;
+    font-family: Arial,Helvetica,sans-serif;
+    font-size: 14px;
+    color: #333;
+}
+
+span.bizname {
+  font-weight: bold;
+}
+
+/* end just for checkbox*/
+
+
+.example{
+  margin-bottom : 1.5em;
+}
+
+input[type=checkbox]:not(old),
+input[type=radio   ]:not(old){
+  width     : 2em;
+  margin    : 0;
+  padding   : 0;
+  font-size : 1em;
+  opacity   : 0;
+}
+
+input[type=checkbox]:not(old) + label,
+input[type=radio   ]:not(old) + label{
+  display      : inline-block;
+  margin-left  : -2em;
+  line-height  : 1.5em;
+}
+
+input[type=checkbox]:not(old) + label > span,
+input[type=radio   ]:not(old) + label > span{
+  display          : inline-block;
+  width            : 0.875em;
+  height           : 0.875em;
+  margin           : 0.25em 0.5em 0.25em 0.25em;
+  border           : 0.0625em solid rgb(192,192,192);
+  border-radius    : 0.25em;
+  background       : rgb(224,224,224);
+  background-image :    -moz-linear-gradient(rgb(240,240,240),rgb(224,224,224));
+  background-image :     -ms-linear-gradient(rgb(240,240,240),rgb(224,224,224));
+  background-image :      -o-linear-gradient(rgb(240,240,240),rgb(224,224,224));
+  background-image : -webkit-linear-gradient(rgb(240,240,240),rgb(224,224,224));
+  background-image :         linear-gradient(rgb(240,240,240),rgb(224,224,224));
+  vertical-align   : bottom;
+}
+
+input[type=checkbox]:not(old):checked + label > span,
+input[type=radio   ]:not(old):checked + label > span{
+  background-image :    -moz-linear-gradient(rgb(224,224,224),rgb(240,240,240));
+  background-image :     -ms-linear-gradient(rgb(224,224,224),rgb(240,240,240));
+  background-image :      -o-linear-gradient(rgb(224,224,224),rgb(240,240,240));
+  background-image : -webkit-linear-gradient(rgb(224,224,224),rgb(240,240,240));
+  background-image :         linear-gradient(rgb(224,224,224),rgb(240,240,240));
+}
+
+input[type=checkbox]:not(old):checked + label > span:before{
+  content     : '✓';
+  display     : block;
+  width       : 1em;
+  color       : rgb(153,204,102);
+  font-size   : 0.875em;
+  line-height : 1em;
+  text-align  : center;
+  text-shadow : 0 0 0.0714em rgb(115,153,77);
+  font-weight : bold;
+}
+
+input[type=radio]:not(old):checked +  label > span > span{
+  display          : block;
+  width            : 0.5em;
+  height           : 0.5em;
+  margin           : 0.125em;
+  border           : 0.0625em solid rgb(115,153,77);
+  border-radius    : 0.125em;
+  background       : rgb(153,204,102);
+  background-image :    -moz-linear-gradient(rgb(179,217,140),rgb(153,204,102));
+  background-image :     -ms-linear-gradient(rgb(179,217,140),rgb(153,204,102));
+  background-image :      -o-linear-gradient(rgb(179,217,140),rgb(153,204,102));
+  background-image : -webkit-linear-gradient(rgb(179,217,140),rgb(153,204,102));
+  background-image :         linear-gradient(rgb(179,217,140),rgb(153,204,102));
+}

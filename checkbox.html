@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700,600|Oswald' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="bootstrap.min.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="components.css" media="screen" />
+    <script src="https://code.jquery.com/jquery-1.11.3.min.js" type="text/javascript"></script>
+    <script src="floatlabels.js" type="text/javascript"></script>
+    <style>
+        #demo{
+            width:500px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="demo" class="checkbox">
+        <div class="fields">
+            <label for="termsAgree" id="termsAgreeLabel" aria-pressed="false" class="helpNotifyUS ui-state-default ui-corner-all ui-button-text-only" role="button" aria-disabled="false">
+                <input type="checkbox" class="validate ui-helper-hidden-accessible" required="required" name="terms" id="termsAgree" auto-required="true">
+                <span class="icon "></span>
+                I'm authorized to sign on behalf of <span class="bizname">[Business Name]</span>, and what I've typed above should be taken as my legal signature on behalf of <span class="bizname">[Buiness Name]</span>.
+            </label>
+        </div>
+    </div>
+
+
+</html>
