@@ -2,9 +2,8 @@
 <html>
 
 <head>
-    <meta charset='utf-8'>
-    <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta charset='utf-8'>    
+    <meta name="viewport" content="width=500, initial-scale=0.8"/>
     <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700,600|Oswald' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" media="screen" />
     <link rel="stylesheet" type="text/css" href="css/dropzone.css" media="screen" />
@@ -13,11 +12,6 @@
     <script type="text/javascript" src="js/floatlabels.js"></script>
     <script type="text/javascript" src="js/bootstrap.min.js"></script>
     <script type="text/javascript" src="js/dropzone.min.js"></script>
-    <style>
-    #demo {
-        width: 800px;
-    }
-    </style>
 </head>
 
 <body>
@@ -64,7 +58,7 @@
                 $(document).ready(function() {
                     $('#address-group').hide();
                     $('select').floatlabel({
-                        labelEndTop: "2px",
+                        labelEndTop: "1px",
                         paddingOffset: "0px"
                     });
                     $('#pAddress').on('change', function() {
@@ -81,15 +75,41 @@
                 </style>
             </div>
             <div class="tab-pane" id="filedrop">
-                <form action="/upload" class="dropzone" id="file-dropzone"> </form>
+                <form action="http://www.ireacto.com/upload.php" class="dropzone" id="file-dropzone"> </form>
                 <script type="text/javascript">
-                //Dropzone.autoDiscover = false;
+                Dropzone.options.myDropzone = {
+                    clickable: true,
+                    init: function() {
+                        thisDropzone = this;
+                        thisDropzone.on("addedfile", function(file) {
+                            alert('added');
+                            var removeButton = Dropzone.createElement("Remove file");
+                            removeButton.addEventListener("click", function(e) {
+                                e.preventDefault();
+                                e.stopPropagation();
+                                thisDropzone.removeFile(file);
+                            });
+                            file.previewElement.appendChild(removeButton);
+                        });
+                    }
+                }
                 $(document).ready(function() {
+                    Dropzone.autoDiscover = false;
                     $('#file-dropzone').dropzone({
                         maxThumbnailFilesize: 2,
                         thumbnailWidth: 200,
                         thumbnailHeight: 200,
-                        dictDefaultMessage: "Drag & drop or click to upload file"
+                        dictDefaultMessage: "Drag & drop or click to upload file",
+                        accept: function(file, done) {
+                            var removeButton = Dropzone.createElement('<div class="dz-trash">XXXX</div>');
+                            removeButton.addEventListener("click", function(e) {
+                                e.preventDefault();
+                                e.stopPropagation();
+                                thisDropzone.removeFile(file);
+                            });
+                            file.previewElement.appendChild(removeButton);
+                            done();
+                        }
                     });
                 });
                 </script>

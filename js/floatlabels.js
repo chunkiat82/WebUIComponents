@@ -40,8 +40,6 @@
                     '-ms-transition'                : 'all ' + transDuration + 's ' + transEasing,
                     'transition'                    : 'all ' + transDuration + 's ' + transEasing
                 };
-
-                console.log(thisElement.prop('tagName').toUpperCase());
                 if( thisElement.prop('tagName').toUpperCase() != 'INPUT' &&
                     thisElement.prop('tagName').toUpperCase() != 'TEXTAREA' &&
                     thisElement.prop('tagName').toUpperCase() != 'SELECT') { return; }
@@ -131,7 +129,7 @@
                         'opacity'                       : '1'
                     });
                     if( self.settings.slideInput ) {
-                        self.$element.css({ 'padding-top' : self.inputPaddingTop });
+                        self.$element.css({ 'padding-top' : '8px'});//self.inputPaddingTop });
                     }
                     self.$element.addClass('active-floatlabel');
                 }, 50);

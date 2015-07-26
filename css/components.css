@@ -27,30 +27,18 @@ body {
   font-size: 14px;
 }
 #demo {
-  width:300px;
   margin: 0 auto;
-	padding:20px;	
 }
 
-#demo .tab-pane{
-  padding: 20px;
-}
-
-input.pp{
-  border: 1px solid #34495e;
-  font-size: 14px;
+.tab-pane{
   padding: 10px;
-  width: 200px;
-  outline: 0;
-  color: #22313d;
-  border-radius: 5px;
 }
 
 label.label-floatlabel {
   font-weight: bold;
   padding-left: 5px;
   color: #22313d;
-  font-size:9px !important;
+  font-size:8px !important;
 }
 
 /* special fix */
@@ -203,8 +191,6 @@ span.bizname {
 }
 
 /* end just for checkbox*/
-
-
 .example{
   margin-bottom : 1.5em;
 }
@@ -276,4 +262,20 @@ input[type=radio]:not(old):checked +  label > span > span{
   background-image :      -o-linear-gradient(rgb(179,217,140),rgb(153,204,102));
   background-image : -webkit-linear-gradient(rgb(179,217,140),rgb(153,204,102));
   background-image :         linear-gradient(rgb(179,217,140),rgb(153,204,102));
+}
+
+div.dz-trash{
+    pointer-events: none;
+    opacity: 100;
+    z-index: 600;
+    position: absolute;
+    display: block;
+    top:  95%;
+    left: 95%;
+    width:24px;
+    height:24px;
+    margin-left: -27px;
+    margin-top: -27px;
+    text-indent: -99999px;
+    background: url("../images/trash.png") no-repeat;
 }

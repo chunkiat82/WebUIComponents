@@ -1,0 +1,76 @@
+@import url("//netdna.bootstrapcdn.com/bootstrap/3.0.0-rc2/css/bootstrap-glyphicons.css");
+
+body{
+    background-color: #EEE;
+}
+.cip div.header{    
+    height:80px;
+    background: #FFF url(https://www.paypalobjects.com/webstatic/i/logo/rebrand/ppcom.svg) 150px center no-repeat
+}
+
+.cip div.break-after-header{
+     height:30px;
+}
+.cip div.white {
+    background-color: white;
+}
+
+.cip div.space {
+    margin-top:20px;
+}
+
+.cip div.space-last {
+    margin-bottom:20px;
+}
+
+.cip p {
+    color: #999;
+    text-align: justify;
+}
+
+.cip .row-no-padding {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+}
+
+.cip .vertical-align {
+    display: flex;
+    align-items: center;
+}
+
+.cip .address .floatlabel-wrapper{
+    margin-top: 20px;
+}
+.cip .text-gone {
+    text-indent: -9999999px;
+}
+.cip p.small {
+    font-size: 10px;
+}
+.cip h4{
+    margin-bottom: 1px;
+}
+
+.cip .grey-text{
+    color: #999;
+}
+
+ul.bullet {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    
+}
+ul.bullet li.empty{
+    background: url('../images/bullet-empty-12.png') no-repeat left 4px;
+    height: 40px;
+    padding-left: 30px;
+    padding-bottom: 3px;    
+}
+
+ul.bullet li.full{
+    background: url('../images/bullet-full-12.png') no-repeat left 4px;
+    height: 40px;
+    padding-left: 30px;
+    padding-bottom: 3px;    
+}
