@@ -15,7 +15,7 @@
 </head>
 
 <body>
-    <div id="demo">
+    <div>
         <ul id="tabs" class="nav nav-tabs nav-justified" data-toggle="tab">
             <li role="presentation" class="active"><a data-toggle="tab" href="#textbox">TextBox</a></li>
             <li role="presentation"><a data-toggle="tab" href="#select">Select</a></li>
@@ -62,9 +62,11 @@
                         paddingOffset: "0px"
                     });
                     $('#pAddress').on('change', function() {
-                        if ($(this).val() != "-1") return;
-                        $('#address-group').show();
-                        $('#address').hide();
+                        if ($(this).val() == "-1") {
+                            $('#address-group').show();                    
+                        }else{
+                            $('#address-group').hide();
+                        }                        
                     });
                 });
                 </script>
@@ -77,22 +79,6 @@
             <div class="tab-pane" id="filedrop">
                 <form action="http://www.ireacto.com/upload.php" class="dropzone" id="file-dropzone"> </form>
                 <script type="text/javascript">
-                Dropzone.options.myDropzone = {
-                    clickable: true,
-                    init: function() {
-                        thisDropzone = this;
-                        thisDropzone.on("addedfile", function(file) {
-                            alert('added');
-                            var removeButton = Dropzone.createElement("Remove file");
-                            removeButton.addEventListener("click", function(e) {
-                                e.preventDefault();
-                                e.stopPropagation();
-                                thisDropzone.removeFile(file);
-                            });
-                            file.previewElement.appendChild(removeButton);
-                        });
-                    }
-                }
                 $(document).ready(function() {
                     Dropzone.autoDiscover = false;
                     $('#file-dropzone').dropzone({

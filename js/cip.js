@@ -13,9 +13,11 @@ $(document).ready(function() {
         paddingOffset: "0px"
     });
     $('#pAddress').on('change', function() {
-        if ($(this).val() != "-1") return;
-        $('#address-group').show();
-        $('#address').hide();
+        if ($(this).val() == "-1") {
+            $('#address-group').show();                    
+        }else{
+            $('#address-group').hide();
+        }        
     });
 
 });

@@ -9,28 +9,35 @@
     <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" media="screen" />    
     <link rel="stylesheet" type="text/css"  href="css/dropzone.css" >
     <link rel="stylesheet" type="text/css" href="css/components.css" media="screen" />
-    
-    
+
     <script src="js/jquery-1.11.3.min.js" type="text/javascript"></script>    
     <script src="js/floatlabels.js" type="text/javascript"></script>
     <script src="js/dropzone.min.js" type="text/javascript"></script>
-
-    <script type="text/javascript">
-        //Dropzone.autoDiscover = false;
-        $(document).ready(function() {            
-            $('#file-dropzone').dropzone({
-                maxThumbnailFilesize: 2,
-                thumbnailWidth: 200,
-                thumbnailHeight: 200,
-                dictDefaultMessage:"Drag & drop or click to upload file"
-            });
-        });
-    </script>
 </head>
 
 <body>
     <div id="demo">
         <form action="/upload" class="dropzone"  id="file-dropzone"> </form>
     </div>
-
+    <script type="text/javascript">
+        $(document).ready(function() {
+            Dropzone.autoDiscover = false;
+            $('#file-dropzone').dropzone({
+                maxThumbnailFilesize: 2,
+                thumbnailWidth: 200,
+                thumbnailHeight: 200,
+                dictDefaultMessage: "Drag & drop or click to upload file",
+                accept: function(file, done) {
+                    var removeButton = Dropzone.createElement('<div class="dz-trash">XXXX</div>');
+                    removeButton.addEventListener("click", function(e) {
+                        e.preventDefault();
+                        e.stopPropagation();
+                        thisDropzone.removeFile(file);
+                    });
+                    file.previewElement.appendChild(removeButton);
+                    done();
+                }
+            });
+        });
+    </script>
 </html>
