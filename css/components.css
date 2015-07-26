@@ -20,7 +20,7 @@
   box-sizing: border-box;
 }
 body {
-  margin: 0;
+  
   padding: 0;
   font-family: 'Open Sans', sans-serif;
   color: #34495e;
@@ -28,7 +28,12 @@ body {
 }
 #demo {
   width:300px;
+  margin: 0 auto;
 	padding:20px;	
+}
+
+#demo .tab-pane{
+  padding: 20px;
 }
 
 input.pp{
@@ -58,7 +63,7 @@ select{
 
 select.form-control{    
     color: #BBB;
-    background: url(images/downarrow.png) no-repeat right white;
+    background: url(../images/downarrow.png) no-repeat right white;
     background-position: 95%;
 }
 
@@ -79,7 +84,10 @@ option:first-child{
 .dz-message {
   color: #BBB;
 }
-
+div.tab-pane{
+  margin: 0 auto;
+  width:400px;
+}
 .dropzone {
     height: 200px;
     width: 400px;
@@ -87,6 +95,7 @@ option:first-child{
     background: white;   
     border-radius: 5px;
     padding: 0px !important;
+    position: relative;
 }
 
 .dropzone .dz-message {
@@ -103,14 +112,12 @@ option:first-child{
   content: " ";
   position: absolute;
   z-index: -1;
-  top: 10px;
-  left: 10px;
-  right: 5px;
-  bottom: 5px;
   border: 1px solid #BBB;
-  height: 220px;
-  width: 420px;
+  height: 215px;
+  width: 415px;
   border-radius: 5px;
+  top: -10px;
+  left: -10px;
 }
 
 /* just for checkbox*/

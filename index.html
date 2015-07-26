@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700,600|Oswald' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="css/dropzone.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="css/components.css" media="screen" />
+    <script type="text/javascript" src="js/jquery-1.11.3.min.js"></script>
+    <script type="text/javascript" src="js/floatlabels.js"></script>
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="js/dropzone.min.js"></script>
+    <style>
+    #demo {
+        width: 800px;
+    }
+    </style>
+</head>
+
+<body>
+    <div id="demo">
+        <ul id="tabs" class="nav nav-tabs nav-justified" data-toggle="tab">
+            <li role="presentation" class="active"><a data-toggle="tab" href="#textbox">TextBox</a></li>
+            <li role="presentation"><a data-toggle="tab" href="#select">Select</a></li>
+            <li role="presentation"><a data-toggle="tab" href="#filedrop">File Drop</a></li>
+            <li role="presentation"><a data-toggle="tab" href="#textdrop">Text Drop Down</a></li>
+            <li role="presentation"><a data-toggle="tab" href="#checkbox">Checkbox</a></li>
+        </ul>
+        <div id="my-tab-content" class="tab-content">
+            <div class="tab-pane active" id="textbox">
+                <input class="form-control" type="text" placeholder="Tax ID Number">
+                <script>
+                $(document).ready(function() {
+
+                    $('input').floatlabel({
+                        labelEndTop: "2px",
+                        paddingOffset: "0px"
+                    });
+                });
+                </script>
+            </div>
+            <div class="tab-pane" id="select">
+                <div>
+                    <div id="address">
+                        <select type="text" id="pAddress" placeholder="Personal Address" class="form-control">
+                            <option value="1">4050 Park Ln</option>
+                            <option value="2">1234 Joesphone</option>
+                            <option value="-1">+ Create New Address</option>
+                        </select>
+                    </div>
+                    <div id="address-group">
+                        <select type="text" id="pAddress" placeholder="Country" class="form-control">
+                            <option value="1">SG</option>
+                            <option value="2">HK</option>
+                        </select>
+                        <input class="form-control" type="text" placeholder="Postal Code">
+                        <input class="form-control" type="text" placeholder="State">
+                    </div>
+                </div>
+                <script type="text/javascript">
+                $(document).ready(function() {
+                    $('#address-group').hide();
+                    $('select').floatlabel({
+                        labelEndTop: "2px",
+                        paddingOffset: "0px"
+                    });
+                    $('#pAddress').on('change', function() {
+                        if ($(this).val() != "-1") return;
+                        $('#address-group').show();
+                        $('#address').hide();
+                    });
+                });
+                </script>
+                <style type="text/css">
+                #address-group > * {
+                    margin-top: 10px;
+                }
+                </style>
+            </div>
+            <div class="tab-pane" id="filedrop">
+                <form action="/upload" class="dropzone" id="file-dropzone"> </form>
+                <script type="text/javascript">
+                //Dropzone.autoDiscover = false;
+                $(document).ready(function() {
+                    $('#file-dropzone').dropzone({
+                        maxThumbnailFilesize: 2,
+                        thumbnailWidth: 200,
+                        thumbnailHeight: 200,
+                        dictDefaultMessage: "Drag & drop or click to upload file"
+                    });
+                });
+                </script>
+            </div>
+            <div class="tab-pane" id="textdrop">
+                <a href="#" id="fr">Fle requirements<img id="arrow" src="images/downarrow.png"/></a>
+                <ul id="frgroup" style="display:none">
+                    <li><a href="#" id="fr">Fle requirement 1</a></li>
+                    <li><a href="#" id="fr">Fle requirement 2</a></li>
+                    <li><a href="#" id="fr">Fle requirement 3</a></li>
+                </ul>
+                <script type="text/javascript">
+                $(document).ready(function() {
+                    $("#fr").click(function() {
+                        $("#frgroup").toggle(function() {
+                            if ($(this).css('display') == 'none') {
+                                $('#arrow').attr('src', 'images/downarrow.png');
+                            } else {
+                                $('#arrow').attr('src', 'images/uparrow.png');
+                            }
+                        });
+                    });
+                });
+                </script>
+            </div>
+            <div class="tab-pane" id="checkbox">
+                <div class="checkbox">
+                    <div class="fields">
+                        <label for="termsAgree" id="termsAgreeLabel" aria-pressed="false" class="helpNotifyUS ui-state-default ui-corner-all ui-button-text-only" role="button" aria-disabled="false">
+                            <input type="checkbox" class="validate ui-helper-hidden-accessible" required="required" name="terms" id="termsAgree" auto-required="true">
+                            <span class="icon "></span> I'm authorized to sign on behalf of <span class="bizname">[Business Name]</span>, and what I've typed above should be taken as my legal signature on behalf of <span class="bizname">[Buiness Name]</span>.
+                        </label>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript">
+    jQuery(document).ready(function($) {
+        $('#tabs').tab();
+    });
+    </script>
+</body>
+
+</html>
