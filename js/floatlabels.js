@@ -82,7 +82,7 @@
                     'color'                         : self.settings.blurColor
                 });
                 if( !settings.slideInput ) {                    
-                    thisElement.css({ 'padding-top' : this.inputPaddingTop });
+                    thisElement.css({ 'padding-top' : '10px'});//;this.inputPaddingTop });
                 }
                 thisElement.on('keyup blur change', function( e ) {
                     self.checkValue( e );

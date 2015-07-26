@@ -2,7 +2,7 @@ $(document).ready(function() {
 
     //input
     $('input').floatlabel({
-        labelEndTop: "2px",
+        labelEndTop: "1px",
         paddingOffset: "0px"
     });
 
